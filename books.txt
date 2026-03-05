@@ -4,3 +4,4 @@ Fiction,The Reptile Room,Lemony Snicket,Printed,190
 Dystopia,Mockingjay,Suzanne Collins,Printed,398
 Horror,House of Leaves,Mark Z. Danielewski,Printed,709
 Science,What If?,Randall Munroe,Printed,303
+Mystery,A Very Real Mystery,John Mystery,3.14159

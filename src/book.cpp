@@ -2,7 +2,7 @@
 
 using namespace std;
 
-const char* TAB = "    ";
+static const char* TAB = "    ";
 
 Book::Book(string title, string author, Genre genre)
     : title(title), author(author), genre(genre), status(BookStatus::Available) {}

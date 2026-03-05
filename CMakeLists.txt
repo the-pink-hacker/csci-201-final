@@ -7,6 +7,8 @@ add_executable(csci_201_final
     src/main.cpp
     src/book.h
     src/book.cpp
+    src/ebook.h
+    src/ebook.cpp
 )
 
 install(TARGETS csci_201_final
