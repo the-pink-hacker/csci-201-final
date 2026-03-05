@@ -1,9 +1,13 @@
 #include <iostream>
 
+#include "book.h"
+
 using namespace std;
 
 int main() {
-    cout << "Hello, World!" << endl;
+    Book test("Example Book", "John Doe", Genre::Biography);
+
+    cout << test;
 
     return 0;
 }
