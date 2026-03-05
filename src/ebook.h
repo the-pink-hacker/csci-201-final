@@ -5,7 +5,7 @@
 
 class EBook : public Book {
     public:
-        EBook(std::string title, std::string author, Genre genre, double size);
+        EBook(std::string title, std::string author, Genre genre, double fileSizeMB);
         
         void displayInfo() const override;
 

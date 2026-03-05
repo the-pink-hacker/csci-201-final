@@ -2,8 +2,8 @@
 
 using namespace std;
 
-EBook::EBook(string title, string author, Genre genre, double size)
-    : Book(title, author, genre), fileSizeMB(size) {}
+EBook::EBook(string title, string author, Genre genre, double fileSizeMB)
+    : Book(title, author, genre), fileSizeMB(fileSizeMB) {}
 
 void EBook::displayInfo() const {
     cout << this;
