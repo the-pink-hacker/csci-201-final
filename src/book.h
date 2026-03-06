@@ -26,11 +26,13 @@ class Book {
         Genre genre;
         BookStatus status;
 
+        virtual void outputStream(std::ostream& stream) const;
+
     public:
         Book(std::string title, std::string author, Genre genre);
         virtual ~Book() = default;
 
-        virtual void displayInfo() const;
+        void displayInfo() const;
         void setStatus(BookStatus status);
         BookStatus getStatus() const;
 

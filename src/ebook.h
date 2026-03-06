@@ -7,9 +7,7 @@ class EBook : public Book {
     public:
         EBook(std::string title, std::string author, Genre genre, double fileSizeMB);
         
-        void displayInfo() const override;
-
-        friend std::ostream& operator<<(std::ostream& stream, const EBook& book);
+        void outputStream(std::ostream& stream) const override;
     private:
         double fileSizeMB;
 };

@@ -39,8 +39,15 @@ static const char* statusIntoString(const BookStatus status) {
     }
 }
 
+void Book::outputStream(ostream& stream) const {
+    stream << title << endl;
+    stream << TAB << "Author: " << author << endl;
+    stream << TAB << "Genre: " << genreIntoString(genre) << endl;
+    stream << TAB << "Status: " << statusIntoString(status) << endl;
+}
+
 void Book::displayInfo() const {
-    cout << this;
+    outputStream(cout);
 }
 
 void Book::setStatus(BookStatus status) {
@@ -55,10 +62,7 @@ bool Book::operator==(const Book& other) const {
     return title == other.title && author == other.author;
 }
 
-std::ostream& operator<<(std::ostream& stream, const Book& book) {
-    stream << book.title << endl;
-    stream << TAB << "Author: " << book.author << endl;
-    stream << TAB << "Genre: " << genreIntoString(book.genre) << endl;
-    stream << TAB << "Status: " << statusIntoString(book.status) << endl;
+ostream& operator<<(ostream& stream, const Book& book) {
+    book.outputStream(stream);
     return stream;
 }

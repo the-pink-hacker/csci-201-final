@@ -9,9 +9,7 @@ class PrintedBook : public Book {
     public:
         PrintedBook(std::string title, std::string author, Genre genre, uint32_t pages);
 
-        void displayInfo() const override;
-
-        friend std::ostream& operator<<(std::ostream& stream, const PrintedBook& book);
+        void outputStream(std::ostream& stream) const override;
 
     private:
         uint32_t pageCount;
