@@ -18,3 +18,5 @@ are logged in the transaction file.
 ```sh
 ./csci_201_final books.txt patrons.txt transactions.txt
 ```
+
+Upon running the program, the user is prompted whether to checkout or return a book. They can also select to exit and save the program. When checking out or returning a book, they are prompted their patron ID and the title of the book. This applies the action and creates a transaction that will go in the log on exit.
