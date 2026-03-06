@@ -1,3 +1,5 @@
+#include <algorithm>
+
 #include "patron.h"
 
 using namespace std;
@@ -5,9 +7,19 @@ using namespace std;
 Patron::Patron(string name, uint32_t id)
     : name(name), id(id) {}
 
-void Patron::borrowBook(Book* book) {}
+void Patron::borrowBook(Book* book) {
+    borrowedBooks.push_back(book);
+}
 
-void Patron::returnBook(Book* book) {}
+void Patron::returnBook(Book* book) {
+    auto i = find(borrowedBooks.begin(), borrowedBooks.end(), book);
+
+    if (i == borrowedBooks.end()) {
+        throw runtime_error("Patron cannot return book");
+    }
+
+    borrowedBooks.erase(i);
+}
 
 bool Patron::operator==(const Patron& other) const {
     return id == other.id && name == other.name;
