@@ -7,5 +7,10 @@ EBook::EBook(string title, string author, Genre genre, double fileSizeMB)
 
 void EBook::outputStream(ostream& stream) const {
     Book::outputStream(stream);
-    stream << "    Size: " << fileSizeMB << " MB" << endl;
+    stream << ',' << fileSizeMB;
+}
+
+void EBook::displayInfo() const {
+    Book::displayInfo();
+    cout << "    Size: " << fileSizeMB << " MB" << endl;
 }

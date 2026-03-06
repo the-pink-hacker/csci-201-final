@@ -20,24 +20,27 @@ enum class BookStatus {
 };
 
 class Book {
+    public:
+        Book(std::string title, std::string author, Genre genre);
+        virtual ~Book() = default;
+
+        // Pretty print
+        virtual void displayInfo() const;
+        void setStatus(BookStatus status);
+        BookStatus getStatus() const;
+
+        bool operator==(const std::string& title) const;
+        // CSV format
+        friend std::ostream& operator<<(std::ostream& stream, const Book& book);
+
     protected:
         std::string title;
         std::string author;
         Genre genre;
         BookStatus status;
 
+        // CSV format
         virtual void outputStream(std::ostream& stream) const;
-
-    public:
-        Book(std::string title, std::string author, Genre genre);
-        virtual ~Book() = default;
-
-        void displayInfo() const;
-        void setStatus(BookStatus status);
-        BookStatus getStatus() const;
-
-        bool operator==(const Book& other) const;
-        friend std::ostream& operator<<(std::ostream& stream, const Book& book);
 };
 
 #endif

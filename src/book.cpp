@@ -40,14 +40,14 @@ static const char* statusIntoString(const BookStatus status) {
 }
 
 void Book::outputStream(ostream& stream) const {
-    stream << title << endl;
-    stream << TAB << "Author: " << author << endl;
-    stream << TAB << "Genre: " << genreIntoString(genre) << endl;
-    stream << TAB << "Status: " << statusIntoString(status) << endl;
+    stream << genreIntoString(genre) << ',' << title << ',' << author << ',';
 }
 
 void Book::displayInfo() const {
-    outputStream(cout);
+    cout << title << endl;
+    cout << TAB << "Author: " << author << endl;
+    cout << TAB << "Genre: " << genreIntoString(genre) << endl;
+    cout << TAB << "Status: " << statusIntoString(status) << endl;
 }
 
 void Book::setStatus(BookStatus status) {
@@ -58,8 +58,8 @@ BookStatus Book::getStatus() const {
     return status;
 }
 
-bool Book::operator==(const Book& other) const {
-    return title == other.title && author == other.author;
+bool Book::operator==(const string& title) const {
+    return this->title == title;
 }
 
 ostream& operator<<(ostream& stream, const Book& book) {

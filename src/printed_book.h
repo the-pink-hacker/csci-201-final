@@ -9,6 +9,9 @@ class PrintedBook : public Book {
     public:
         PrintedBook(std::string title, std::string author, Genre genre, uint32_t pages);
 
+        void displayInfo() const override;
+
+    protected:
         void outputStream(std::ostream& stream) const override;
 
     private:

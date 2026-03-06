@@ -6,8 +6,12 @@
 class EBook : public Book {
     public:
         EBook(std::string title, std::string author, Genre genre, double fileSizeMB);
-        
+
+        void displayInfo() const override;
+
+    protected:
         void outputStream(std::ostream& stream) const override;
+
     private:
         double fileSizeMB;
 };

@@ -7,5 +7,10 @@ PrintedBook::PrintedBook(string title, string author, Genre genre, uint32_t page
 
 void PrintedBook::outputStream(ostream& stream) const {
     Book::outputStream(stream);
-    stream << "    Size: " << pageCount << " pages" << endl;
+    stream << ',' << pageCount;
+}
+
+void PrintedBook::displayInfo() const {
+    Book::displayInfo();
+    cout << "    Size: " << pageCount << " pages" << endl;
 }
