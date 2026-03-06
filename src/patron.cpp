@@ -9,6 +9,10 @@ void Patron::borrowBook(Book* book) {}
 
 void Patron::returnBook(Book* book) {}
 
+bool Patron::operator==(const Patron& other) const {
+    return id == other.id && name == other.name;
+}
+
 void Patron::displayPatron() const {
     cout << name << " (" << id << ")";
 }

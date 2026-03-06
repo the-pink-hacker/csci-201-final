@@ -12,7 +12,16 @@ Transaction::Transaction(uint32_t patronId, string bookTitle, BookStatus status)
     }
 
 ostream& operator<<(ostream& stream, const Transaction& transaction) {
-    stream << "Transaction " <<  ctime(&transaction.date);
+    switch (transaction.status) {
+        case BookStatus::CheckedOut:
+            stream << "Checked Out";
+            break;
+        case BookStatus::Available:
+            stream << "Returned";
+            break;
+    }
+
+    stream << " Transaction " <<  ctime(&transaction.date);
     stream << "    Book Title: " << transaction.bookTitle << endl;
     stream << "    Patron ID: " << transaction.patronId << endl;
     return stream;
